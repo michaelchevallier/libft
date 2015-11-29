@@ -1,10 +1,14 @@
 			ft_memalloc
-ft_memdel
-ft_strnew
-ft_strdel
-ft_strclr
-ft_striter
-ft_striteri
+			ft_memdel
+			ft_strnew
+			ft_strdel
+			ft_strclr
+			ft_striter
+			ft_striteri
+			ft_itoa
+			ft_putchar
+			ft_putstr
+			ft_putendl
 ft_strmap
 ft_strmapi
 ft_strequ
@@ -13,10 +17,6 @@ ft_strsub
 ft_strjoin
 ft_strim
 ft_strsplit
-ft_itoa
-			ft_putchar
-			ft_putstr
-			ft_putendl
 ft_putnbr
 ft_putchar_fd
 ft_putstr_fd
