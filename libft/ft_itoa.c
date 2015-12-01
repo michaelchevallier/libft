@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/30 14:22:07 by mchevall          #+#    #+#             */
+/*   Updated: 2015/11/30 14:22:17 by mchevall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -52,7 +64,7 @@ static char		*calc(int n, int i, char *chain)
 	}
 	chain[i] = '\0';
 	ft_strrev(chain);
-	return(chain);
+	return (chain);
 }
 
 char			*ft_itoa(int n)

@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:15:37 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/25 17:50:34 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/11/30 19:03:31 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char		*ft_strstr(const char *s1, const char *s2)
 		{
 			while (s1[i + j] == s2[j])
 			{
-				j++;
 				if (s1[i + j] == s2[j] && j + 1 == s2len)
 					return (char *)(&s1[i]);
+				j++;
 			}
 		}
 		j = 0;

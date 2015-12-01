@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:47:29 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/25 14:40:26 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/11/30 19:03:54 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char		*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t i;
 
 	i = 0;
-	while (s2[i])
+	if (n == 0)
+		return (s1);
+	while (s2[i] != '\0')
 	{
 		if (i < n)
 		{
