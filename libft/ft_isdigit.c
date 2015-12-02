@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:49:22 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/26 15:33:05 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/02 14:28:24 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int			ft_isdigit(int c)
 {
-	int		digit;
-
-	digit = 0;
-	if (c >= '0' && c <= '9')
-		digit = c;
-	return (digit);
+	return (c >= '0' && c <= '9');
 }

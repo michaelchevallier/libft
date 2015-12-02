@@ -1,3 +1,11 @@
+ft_strim
+ft_strsplit
+			ft_strsub
+			ft_strjoin
+			ft_strequ
+			ft_strnequ
+			ft_strmap
+			ft_strmapi
 			ft_memalloc
 			ft_memdel
 			ft_strnew
@@ -9,16 +17,8 @@
 			ft_putchar
 			ft_putstr
 			ft_putendl
-ft_strmap
-ft_strmapi
-ft_strequ
-ft_strnequ
-ft_strsub
-ft_strjoin
-ft_strim
-ft_strsplit
-ft_putnbr
-ft_putchar_fd
-ft_putstr_fd
-ft_putendl_fd
-ft_putnbr_fd
+			ft_putnbr
+			ft_putchar_fd
+			ft_putstr_fd
+			ft_putendl_fd
+			ft_putnbr_fd

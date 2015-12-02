@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:38:07 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/26 15:36:05 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/02 14:28:48 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int		ft_isalpha(int c)
 {
-	int		alpha;
-
-	alpha = 0;
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		alpha = c;
-	return (alpha);
+	return 	(c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
 }

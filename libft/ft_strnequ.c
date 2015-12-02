@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:07:40 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 14:28:01 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/02 15:49:41 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/02 16:05:55 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	return (c >= 0 && c <= 127);
+	if (s1 == NULL || s2 == NULL)
+		return ((int)NULL);
+	if (ft_strncmp(s1, s2, n) == 0 || n == 0)
+		return (1);
+	else
+		return (0);
 }

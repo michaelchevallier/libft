@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:07:40 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 14:28:01 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/02 15:07:41 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/02 15:45:31 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	return (c >= 0 && c <= 127);
+	if (s1 == NULL || s2 == NULL)
+		return ((int)NULL);
+	if (strcmp(s1, s2) == 0)
+		return (1);
+	else
+		return (0);
 }

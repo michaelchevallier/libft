@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:07:40 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 14:28:01 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/02 16:18:40 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/02 18:41:39 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	return (c >= 0 && c <= 127);
+	char		*str;
+	size_t		i;
+
+	if (s == NULL || (int)len < 0)
+		return (NULL);
+	str = ft_strnew(len);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:57:16 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/26 15:33:50 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/02 14:29:38 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int			ft_isalnum(int c)
 {
-	int		alnum;
-
-	alnum = 0;
-	if (ft_isalpha(c) > 0 || ft_isdigit(c) > 0)
-		alnum = c;
-	return (alnum);
+	return (ft_isalpha(c) > 0 || ft_isdigit(c) > 0);
 }

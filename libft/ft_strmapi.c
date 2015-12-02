@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:07:40 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 14:28:01 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/02 13:52:42 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/02 15:49:02 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return (c >= 0 && c <= 127);
+	size_t			i;
+	char			*str;
+
+	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
+	str = ft_strnew(ft_strlen(s));
+	while (i < ft_strlen(s))
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	return (str);
 }

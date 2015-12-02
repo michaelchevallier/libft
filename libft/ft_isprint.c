@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:16:03 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/26 15:32:15 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/02 14:30:11 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int		ft_isprint(int c)
 {
-	int		print;
-
-	print = 0;
-	if (c >= 32 && c <= 126)
-		print = c;
-	return (print);
+	return (c >= 32 && c <= 126);
 }
