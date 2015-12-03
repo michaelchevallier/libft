@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_2dtab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 17:23:04 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/03 10:42:03 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/03 11:16:08 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/03 12:39:57 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	**ft_2dtab(size_t i, size_t j)
 {
-	char	*str;
+	size_t		k;
+	char		**tab;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
-	str = ft_strcat(str, s1);
-	str = ft_strcat(str, s2);
-	return (str);
+	k = 0;
+	tab = (char **)ft_memalloc(sizeof(char **) * i);
+	while (k < j)
+	{
+		tab[k] = (char *)ft_memalloc(sizeof(char *) * j);
+		k++;
+	}
+	return(tab);
 }

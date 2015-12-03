@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:42:19 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 19:39:55 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/03 11:25:13 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,7 @@ int 		ft_strnequ(char const *s1, char const *s2, size_t n);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
+char		**ft_2dtab(size_t i, size_t j);
+char		**ft_strsplit(char const *s, char c);
+void		*ft_strrev(char *str);
 #endif

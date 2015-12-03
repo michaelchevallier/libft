@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:22:07 by mchevall          #+#    #+#             */
-/*   Updated: 2015/11/30 14:22:17 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/03 11:25:18 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,6 @@ static int		ft_isneg(int n)
 	if (n < 0)
 		neg = 1;
 	return (neg);
-}
-
-static void		*ft_strrev(char *str)
-{
-	int		i;
-	int		length;
-	char	tmp;
-
-	if (str)
-	{
-		i = 0;
-		length = ft_strlen(str);
-		while (i < length / 2)
-		{
-			tmp = str[i];
-			str[i] = str[length - i - 1];
-			str[length - i - 1] = tmp;
-			i++;
-		}
-	}
-	return (str);
 }
 
 static char		*calc(int n, int i, char *chain)
@@ -75,7 +54,7 @@ char			*ft_itoa(int n)
 
 	i = 0;
 	isneg = ft_isneg(n);
-	chain = (char *)ft_memalloc(14);
+	chain = (char *)ft_memalloc(sizeof(char *) * 12);
 	if (n == -2147483648)
 	{
 		chain = "-2147483648";
