@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 11:16:08 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/03 12:39:57 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/07 18:22:44 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ char	**ft_2dtab(size_t i, size_t j)
 		tab[k] = (char *)ft_memalloc(sizeof(char *) * j);
 		k++;
 	}
-	return(tab);
+	return (tab);
 }
