@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 16:18:40 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/02 18:41:39 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/09 17:24:30 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s == NULL || (int)len < 0)
 		return (NULL);
 	str = ft_strnew(len);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:22:07 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 11:07:15 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/09 17:30:18 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ char					*ft_itoa(int n)
 
 	i = 0;
 	isneg = ft_isneg(n);
-	chain = (char *)ft_memalloc(sizeof(char *) * 12);
+	chain = (char *)ft_memalloc(sizeof(char) * 12);
+	if (!chain)
+		return (NULL);
 	if (n == 0)
 	{
 		chain[i] = 48;

@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 17:35:16 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/03 10:15:02 by mchevall         ###   ########.fr       */
+/*   Updated: 2015/12/09 17:29:06 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char		*ft_strtrim(char const *s)
 	if (len < 0)
 		return (ft_strnew(1));
 	str = ft_strsub(s, start, len);
-	str[len] = '\0';
-	return (str);
+	(str ? str[len] = '\0' : 0);
+	return (str ? str : NULL);
 }
