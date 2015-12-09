@@ -6,7 +6,7 @@
 #    By: mchevall <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 16:28:30 by mchevall          #+#    #+#              #
-#    Updated: 2015/12/03 11:20:47 by mchevall         ###   ########.fr        #
+#    Updated: 2015/12/08 19:19:03 by mchevall         ###   ########.fr        #
 #    Updated: 2015/11/26 18:47:36 by mchevall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -22,7 +22,9 @@ ft_putendl.c ft_putnbr.c ft_itoa.c ft_memalloc.c ft_memdel.c ft_strclr.c\
 ft_strdel.c ft_strnew.c ft_striteri.c ft_striter.c ft_putstr_fd.c\
 ft_putendl_fd.c ft_putchar_fd.c ft_putnbr_fd.c ft_strmap.c ft_strmapi.c\
 ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c\
-ft_2dtab.c ft_strsplit.c ft_strrev.c
+ft_2dtab.c ft_strsplit.c ft_strrev.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c\
+ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sort_int_tab.c ft_isprime.c\
+ft_foreach.c
 SRCO = $(SRC:.c=.o)
 HEADERS = .
 CC = gcc

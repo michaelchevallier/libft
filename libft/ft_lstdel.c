@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:14:23 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 10:46:45 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/08 17:08:16 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/08 18:50:57 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	char			*ptrdst;
-	const char		*ptrsrc;
-	size_t			n;
-	size_t			len;
+	t_list		*next;
+	t_list		*temp;
 
-	ptrdst = dst;
-	ptrsrc = src;
-	n = size;
-	while (n-- != 0 && *ptrdst != '\0')
-		ptrdst++;
-	len = ptrdst - dst;
-	n = size - len;
-	if (n == 0)
-		return (len + ft_strlen(ptrsrc));
-	while (*ptrsrc != '\0')
+	if (alst)
 	{
-		if (n != 1)
+		next = *alst;
+		while (next)
 		{
-			*ptrdst++ = *ptrsrc;
-			n--;
+			if (del)
+				del(next->content, (*next).content_size);
+			temp = next->next;
+			free(next);
+			next = temp;
 		}
-		ptrsrc++;
+		*alst = NULL;
 	}
-	*ptrdst = '\0';
-	return (len + (ptrsrc - src));
 }

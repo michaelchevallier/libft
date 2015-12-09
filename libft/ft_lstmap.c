@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:48:12 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 17:01:08 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/08 18:08:26 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/08 18:51:11 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void		*ft_memset(void *b, int c, size_t len)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t				i;
-	unsigned char		*ptr;
+	t_list	*result;
+	t_list	*new;
 
-	i = 0;
-	ptr = (unsigned char *)b;
-	while (i < len)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new = f(lst);
+	result = new;
+	while (lst->next)
 	{
-		ptr[i] = (unsigned char)c;
-		i++;
+		new->next = (t_list *)malloc(sizeof(t_list));
+		if (!new->next)
+			return (NULL);
+		lst = lst->next;
+		new->next = f(lst);
+		new = new->next;
 	}
-	return (b);
+	return (result);
 }

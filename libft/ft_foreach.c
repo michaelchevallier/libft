@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:48:12 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 17:01:08 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/08 19:10:07 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/08 19:12:13 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memset(void *b, int c, size_t len)
+void		ft_foreach(int *tab, size_t length, void (*f)(int))
 {
-	size_t				i;
-	unsigned char		*ptr;
+	size_t		i;
 
 	i = 0;
-	ptr = (unsigned char *)b;
-	while (i < len)
+	while (i < length)
 	{
-		ptr[i] = (unsigned char)c;
+		f(tab[i]);
 		i++;
 	}
-	return (b);
 }

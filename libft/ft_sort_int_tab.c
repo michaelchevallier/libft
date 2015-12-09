@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:14:23 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 10:46:45 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/08 18:56:11 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/08 18:59:29 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_sort_int_tab(int *tab, unsigned int size)
 {
-	char			*ptrdst;
-	const char		*ptrsrc;
-	size_t			n;
-	size_t			len;
+	int					tmp;
+	size_t				i;
+	size_t				j;
 
-	ptrdst = dst;
-	ptrsrc = src;
-	n = size;
-	while (n-- != 0 && *ptrdst != '\0')
-		ptrdst++;
-	len = ptrdst - dst;
-	n = size - len;
-	if (n == 0)
-		return (len + ft_strlen(ptrsrc));
-	while (*ptrsrc != '\0')
+	i = 0;
+	j = 0;
+	tmp = 0;
+	while (j < size)
 	{
-		if (n != 1)
+		while (i < size)
 		{
-			*ptrdst++ = *ptrsrc;
-			n--;
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			i++;
 		}
-		ptrsrc++;
+		i = 0;
+		j++;
 	}
-	*ptrdst = '\0';
-	return (len + (ptrsrc - src));
 }

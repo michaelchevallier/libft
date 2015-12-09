@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:14:23 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/08 10:46:45 by mchevall         ###   ########.fr       */
+/*   Created: 2015/12/08 19:15:50 by mchevall          #+#    #+#             */
+/*   Updated: 2015/12/08 19:18:26 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_isprime(int nb)
 {
-	char			*ptrdst;
-	const char		*ptrsrc;
-	size_t			n;
-	size_t			len;
+	int		i;
 
-	ptrdst = dst;
-	ptrsrc = src;
-	n = size;
-	while (n-- != 0 && *ptrdst != '\0')
-		ptrdst++;
-	len = ptrdst - dst;
-	n = size - len;
-	if (n == 0)
-		return (len + ft_strlen(ptrsrc));
-	while (*ptrsrc != '\0')
+	i = 2;
+	if (nb <= 1 || nb > 2147483647)
 	{
-		if (n != 1)
-		{
-			*ptrdst++ = *ptrsrc;
-			n--;
-		}
-		ptrsrc++;
+		return (0);
 	}
-	*ptrdst = '\0';
-	return (len + (ptrsrc - src));
+	else
+	{
+		while (i <= nb / i)
+		{
+			if (nb % i == 0)
+				return (0);
+			i++;
+		}
+		return (1);
+	}
 }
