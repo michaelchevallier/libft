@@ -18,10 +18,10 @@ char	**ft_2dtab(size_t i, size_t j)
 	char		**tab;
 
 	k = 0;
-	tab = (char **)ft_memalloc(sizeof(char **) * i);
+	tab = (char **)ft_memalloc(sizeof(char *) * i);
 	while (k < j)
 	{
-		tab[k] = (char *)ft_memalloc(sizeof(char *) * j);
+		tab[k] = (char *)ft_memalloc(sizeof(char) * j);
 		k++;
 	}
 	return (tab);
