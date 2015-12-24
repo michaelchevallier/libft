@@ -53,10 +53,8 @@ char					*ft_itoa(int n)
 {
 	char			*chain;
 	int				i;
-	int				isneg;
 
 	i = 0;
-	isneg = ft_isneg(n);
 	chain = (char *)ft_memalloc(sizeof(char) * 12);
 	if (!chain)
 		return (NULL);
