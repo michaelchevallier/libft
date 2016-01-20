@@ -6,7 +6,7 @@
 #    By: mchevall <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 16:28:30 by mchevall          #+#    #+#              #
-#    Updated: 2015/12/20 20:05:38 by mchevall         ###   ########.fr        #
+#    Updated: 2016/01/20 15:44:17 by mchevall         ###   ########.fr        #
 #    Updated: 2015/11/26 18:47:36 by mchevall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -26,7 +26,7 @@ ft_2dtab.c ft_strsplit.c ft_strrev.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c\
 ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sort_int_tab.c ft_isprime.c\
 ft_foreach.c clean_open.c clean_read.c
 SRCO = $(SRC:.c=.o)
-HEADERS = .
+HEADERS = includes
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -35,7 +35,7 @@ all: $(NAME)
 re: fclean all
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) -I includes
 
 $(NAME): $(SRCO)
 	ar rc $(NAME) $(SRCO)
