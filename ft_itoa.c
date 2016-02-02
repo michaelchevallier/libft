@@ -6,12 +6,29 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:22:07 by mchevall          #+#    #+#             */
-/*   Updated: 2016/01/05 18:15:34 by mchevall         ###   ########.fr       */
+/*   Updated: 2016/01/21 16:47:07 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static size_t			ft_size(int n)
+{
+	size_t		i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i++;
+	while (n)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
 
 static int				ft_isneg(int n)
 {
@@ -53,14 +70,17 @@ char					*ft_itoa(int n)
 {
 	char			*chain;
 	int				i;
+	int				len;
 
 	i = 0;
-	chain = (char *)ft_memalloc(sizeof(char) * 12);
+	len = ft_size(n);
+	chain = (char *)ft_memalloc(sizeof(char) * len);
 	if (!chain)
 		return (NULL);
 	if (n == 0)
 	{
 		chain[i] = 48;
+		chain[i + 1] = '\0';
 		return (&chain[i]);
 	}
 	chain = calc(n, i, chain);

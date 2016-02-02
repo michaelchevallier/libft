@@ -6,12 +6,13 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:42:19 by mchevall          #+#    #+#             */
-/*   Updated: 2015/12/18 14:54:01 by mchevall         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:25:25 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 4096
 # include <string.h>
 
 typedef struct	s_list
@@ -26,6 +27,7 @@ int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 int				clean_open(const char *path, int flag);
 int				clean_read(int fildes, char *buf, size_t nbyte);
+int				ft_countwords(const char *s, char c);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
@@ -34,6 +36,8 @@ int				ft_isprint(int c);
 int				ft_isprime(int nb);
 char			*ft_itoa(int n);
 void			ft_foreach(int *tab, size_t length, void (*f)(int));
+int				get_next_line(int const fd, char **line);
+int				ft_lenwords(const char *s, char c, int word);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstdel(t_list **alst, void(*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));

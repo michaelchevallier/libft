@@ -6,7 +6,7 @@
 #    By: mchevall <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 16:28:30 by mchevall          #+#    #+#              #
-#    Updated: 2016/01/20 16:38:41 by mchevall         ###   ########.fr        #
+#    Updated: 2016/02/02 14:27:58 by mchevall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,10 @@ ft_putendl_fd.c ft_putchar_fd.c ft_putnbr_fd.c ft_strmap.c ft_strmapi.c\
 ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c\
 ft_2dtab.c ft_strsplit.c ft_strrev.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c\
 ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sort_int_tab.c ft_isprime.c\
-ft_foreach.c clean_open.c clean_read.c
+ft_foreach.c clean_open.c clean_read.c get_next_line.c ft_countwords.c\
+ft_lenwords.c
 SRCO = $(SRC:.c=.o)
-HEADERS = .
+HEADERS = includes
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -34,7 +35,7 @@ all: $(NAME)
 re: fclean all
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) -I includes
 
 $(NAME): $(SRCO)
 	ar rc $(NAME) $(SRCO)
