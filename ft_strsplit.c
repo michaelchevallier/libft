@@ -5,37 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/02 14:23:33 by mchevall          #+#    #+#             */
-/*   Updated: 2016/02/02 14:23:36 by mchevall         ###   ########.fr       */
+/*   Created: 2016/02/16 16:49:30 by mchevall          #+#    #+#             */
+/*   Updated: 2016/02/16 16:49:33 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
+#include <stdlib.h>
 
-char			**ft_strsplit(char const *s, char c)
+unsigned int		ft_nword(char const *s, char c)
 {
-	char	**tab;
-	int		i;
-	int		j;
+	unsigned int	i;
+	unsigned int	nword;
+
+	nword = 0;
+	i = 0;
+	if (s[i] != c)
+	{
+		nword++;
+		i++;
+	}
+	while (s[i])
+	{
+		if (s[i] == c)
+			if (s[i + 1] != c)
+				nword++;
+		i++;
+	}
+	return (nword);
+}
+
+static char			**ft_dosplit(char const *s, char c, int nword, int i)
+{
+	char			**result;
+	int				start;
+
+	start = 0;
+	result = (char **)malloc(sizeof(char *) * nword + 1);
+	if (!result)
+		return (NULL);
+	nword = 0;
+	while (s[i])
+	{
+		if (s[i] == c && s[i])
+			i++;
+		else
+		{
+			start = i;
+			while (s[i] != c && s[i])
+				i++;
+			result[nword] = ft_strsub(s, start, (i - start));
+			if (!result)
+				return (NULL);
+			nword++;
+		}
+	}
+	result[nword] = NULL;
+	return (result);
+}
+
+char				**ft_strsplit(char const *s, char c)
+{
+	unsigned int	nword;
 
 	if (!s || !c)
 		return (NULL);
-	tab = (char **)ft_memalloc(sizeof(char *) * (ft_countwords(s, c) + 1));
-	if (!tab)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (j < ft_countwords(s, c))
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c)
-		{
-			tab[j] = ft_strsub(&s[i], 0, ft_lenwords(s, c, (j + 1)));
-			i += (ft_lenwords(s, c, (j + 1)) + 1);
-			j++;
-		}
-	}
-	tab[j] = NULL;
-	return (tab);
+	nword = ft_nword(s, c);
+	return (ft_dosplit(s, c, nword, 0));
 }

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:18:40 by mchevall          #+#    #+#             */
-/*   Updated: 2016/02/16 16:41:07 by mchevall         ###   ########.fr       */
+/*   Created: 2016/02/16 13:52:56 by mchevall          #+#    #+#             */
+/*   Updated: 2016/03/15 10:19:19 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+void		ft_error(void)
 {
-	char		*str;
-	size_t		i;
-
-	if (s == NULL || (int)len < 0)
-		return (NULL);
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	return (str);
+	ft_putstr("error\n");
+	exit(EXIT_FAILURE);
 }

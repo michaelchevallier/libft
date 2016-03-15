@@ -6,7 +6,7 @@
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 11:31:14 by mchevall          #+#    #+#             */
-/*   Updated: 2016/02/01 15:38:26 by mchevall         ###   ########.fr       */
+/*   Updated: 2016/02/16 13:29:28 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int				get_next_line(int const fd, char **line)
 		return (-1);
 	while (checkline != -1)
 	{
-		ret = read(fd, buf, BUFF_SIZE);
+		ret = clean_read(fd, buf, BUFF_SIZE);
 		if (ret == -1)
 			return (ret);
 		buf[ret] = '\0';
