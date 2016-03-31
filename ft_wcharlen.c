@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:18:40 by mchevall          #+#    #+#             */
-/*   Updated: 2016/03/21 18:27:34 by mchevall         ###   ########.fr       */
+/*   Created: 2016/03/31 16:10:56 by mchevall          #+#    #+#             */
+/*   Updated: 2016/03/31 16:36:08 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <wchar.h>
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+size_t	ft_wcharlen(const wchar_t *wchar)
 {
-	char		*str;
-	size_t		i;
+	const wchar_t *p;
 
-	if (s == NULL || (int)len < 0)
-		return (NULL);
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	return (str);
+	p = wchar;
+	while (*p)
+		p++;
+	return (p - wchar);
 }

@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchevall <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 16:18:40 by mchevall          #+#    #+#             */
-/*   Updated: 2016/03/21 18:27:34 by mchevall         ###   ########.fr       */
+/*   Created: 2015/11/30 14:26:35 by mchevall          #+#    #+#             */
+/*   Updated: 2016/03/31 14:51:27 by mchevall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_ustrdel(unsigned char **as)
 {
-	char		*str;
-	size_t		i;
-
-	if (s == NULL || (int)len < 0)
-		return (NULL);
-	str = ft_strnew(len);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (as)
 	{
-		str[i] = s[start + i];
-		i++;
+		free(*as);
+		*as = NULL;
 	}
-	return (str);
 }
